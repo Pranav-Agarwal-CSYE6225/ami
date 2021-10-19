@@ -6,3 +6,9 @@ crash.log
 
 # For built boxes
 *.box
+
+#var file
+*.pkrvars.hcl
+
+# Artifacts
+artifacts/
