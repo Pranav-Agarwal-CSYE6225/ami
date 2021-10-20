@@ -9,6 +9,7 @@ packer {
 
 source "amazon-ebs" "webapp-ubuntu" {
   ami_name      = var.ami_name
+  ami_users = var.ami_users
   instance_type = var.instance_type
   region        = var.region
   profile = var.profile

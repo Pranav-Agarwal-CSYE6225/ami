@@ -19,3 +19,6 @@ variable "ssh_username" {
 variable "ami_description" {
   type =  string
 }
+variable "ami_users" {
+  type =  list(string)
+}
