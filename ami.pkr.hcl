@@ -29,10 +29,6 @@ build {
   sources = [
     "source.amazon-ebs.webapp-ubuntu"
   ]
-  provisioner "file" {
-  source = "artifacts/webapp.zip"
-  destination = "/tmp/webapp.zip"
-  }
   provisioner "shell" {
     script = "setup.bash"
   }
