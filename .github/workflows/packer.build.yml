@@ -1,0 +1,32 @@
+name: Packer Build on Merge
+
+# Controls when the action will run.
+# Triggers the workflow on push or pull request events but only for the main branch
+on:
+  # Workflow is triggered on merges
+  push:
+    # Workflow will only be triggered for merges on "main" branch
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  validate:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    # Ref: https://github.com/marketplace/actions/packer-github-actions
+    - name: Build AMI
+      uses: hashicorp/packer-github-actions@master
+      with:
+        command: build
+        arguments: "-var \"ami_name=Webapp-Ubuntu\" -var \"instance_type=t2.micro\" -var \"region=us-east-1\" -var \"profile=gh-dev\" -var \"source_ami=ami-09e67e426f25ce0d7\" -var \"ssh_username=ubuntu\" -var \"ami_description=xyz\" -var \"access_key=AKIA3O4SWH5KKUUVT5RE\" -var \"secret_key=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\" -var ''ami_users=[\"787897270100\",\"423050130765\"]''"
+        target: ami.pkr.hcl
+      env:
+        PACKER_LOG: 1
