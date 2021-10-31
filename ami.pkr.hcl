@@ -15,7 +15,7 @@ source "amazon-ebs" "webapp-ubuntu" {
   profile = var.profile
   source_ami = var.source_ami
   ssh_username = var.ssh_username
-  ami_description = var.ami_description
+  ami_description = "asfdasf"
   launch_block_device_mappings {
     device_name = "/dev/sda1"
     volume_size = 8
