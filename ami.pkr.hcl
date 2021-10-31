@@ -32,4 +32,5 @@ build {
   ]
   provisioner "shell" {
     script = "setup.bash"
+  }
 }
