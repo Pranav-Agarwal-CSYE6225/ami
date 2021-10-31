@@ -28,6 +28,6 @@ jobs:
         command: build
         arguments: >-
           -var ami_name=Webapp-Ubuntu -var instance_type=t2.micro -var region=us-east-1 -var profile=gh-dev -var source_ami=ami-09e67e426f25ce0d7 -var ssh_username=ubuntu -var ami_description=xyz -var access_key=AKIA3O4SWH5KKUUVT5RE -var secret_key=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 -var 'ami_users=["787897270100\","423050130765"]'
-        target: ami.pkr.hcl
+        target: ami.pkr.hcl variables.pkr.hcl
       env:
         PACKER_LOG: 1
