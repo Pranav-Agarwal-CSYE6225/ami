@@ -21,6 +21,15 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Initialize packer
+      uses: hashicorp/packer-github-actions@master
+      with:
+        command: init
+        target: .
+      env:
+        PACKER_LOG: 1
+
     # Ref: https://github.com/marketplace/actions/packer-github-actions
     - name: Build AMI
       uses: hashicorp/packer-github-actions@master
