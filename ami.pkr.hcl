@@ -30,6 +30,6 @@ build {
   sources = [
     "source.amazon-ebs.webapp-ubuntu"
   ]
-  provisioner "shell" {
+  provisioner "shell" {{}
     script = "setup.bash"
 }
