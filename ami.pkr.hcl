@@ -12,7 +12,8 @@ source "amazon-ebs" "webapp-ubuntu" {
   ami_users = var.ami_users
   instance_type = var.instance_type
   region        = var.region
-  profile = var.profile
+  access_key = var.access_key
+  secret_key = var.secret_key
   source_ami = var.source_ami
   ssh_username = var.ssh_username
   ami_description = var.ami_description
