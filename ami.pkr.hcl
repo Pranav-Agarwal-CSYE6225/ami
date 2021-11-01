@@ -8,15 +8,15 @@ packer {
 }
 
 source "amazon-ebs" "webapp-ubuntu" {
-  ami_name      = var.ami_name
+  ami_name      = "Webapp-Ubuntu"
   ami_users = var.ami_users
-  instance_type = var.instance_type
-  region        = var.region
+  instance_type = "t2.micro"
+  region        = "us-east-1"
   access_key = var.access_key
   secret_key = var.secret_key
   source_ami = var.source_ami
-  ssh_username = var.ssh_username
-  ami_description = var.ami_description
+  ssh_username = "ubuntu"
+  ami_description = "Ubuntu AMI for CSYE6225"
   launch_block_device_mappings {
     device_name = "/dev/sda1"
     volume_size = 8
