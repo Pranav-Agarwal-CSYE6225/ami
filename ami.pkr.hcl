@@ -15,6 +15,8 @@ source "amazon-ebs" "webapp-ubuntu" {
   access_key = var.access_key
   secret_key = var.secret_key
   source_ami = var.source_ami
+  force_deregister =  true
+  force_delete_snapshot = true
   ssh_username = "ubuntu"
   ami_description = "Ubuntu AMI for CSYE6225"
   launch_block_device_mappings {
