@@ -35,8 +35,11 @@ jobs:
       uses: hashicorp/packer-github-actions@master
       with:
         command: build
-        arguments: >-
-          -var source_ami=${{ secrets.SOURCE_AMI }} -var access_key=${{ secrets.ACCESS_KEY }} -var secret_key=${{ secrets.SECRET_KEY }} -var ami_users=["${{ secrets.AWS_DEV }}","${{ secrets.AWS_PROD }}"]
+        arguments: |
+          -var source_ami=${{ secrets.SOURCE_AMI }} \
+          -var access_key=${{ secrets.ACCESS_KEY }} \
+          -var secret_key=${{ secrets.SECRET_KEY }} \
+          -var ami_users=["${{ secrets.AWS_DEV }}","${{ secrets.AWS_PROD }}"]
         target: .
       env:
         PACKER_LOG: 1
