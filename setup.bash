@@ -25,5 +25,7 @@ sudo dpkg-deb -b codedeploy-agent_1.0-1.1597_ubuntu20
 sudo dpkg -i codedeploy-agent_1.0-1.1597_ubuntu20.deb
 sudo service codedeploy-agent start
 sudo systemctl enable codedeploy-agent
-
+echo "==> Installing cloudwatch."
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
+sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 echo "==> Completed Provisioning!."
